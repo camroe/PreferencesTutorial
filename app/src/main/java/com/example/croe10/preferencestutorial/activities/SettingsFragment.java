@@ -10,20 +10,18 @@ import android.view.MenuItem;
 
 import com.example.croe10.preferencestutorial.R;
 
-public class PreferencesFragment extends PreferenceFragmentCompat {
-    private String TAG = PreferencesFragment.class.getCanonicalName();
+public class SettingsFragment extends PreferenceFragmentCompat {
+    private String TAG = SettingsFragment.class.getCanonicalName();
 
-    public PreferencesFragment() {
-        // Required empty public constructor
-    }
-
-    @Override
+      @Override
     public void onCreatePreferences(@Nullable Bundle savedInstanceState, String s) {
 //        super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.preferences);
-        System.out.println("ON CREATE");
+//        addPreferencesFromResource(R.xml.preferences);
+        setPreferencesFromResource(R.xml.preferences,s);
+        System.out.println("ON CREATE Preferences");
         showPreferences();
     }
+
 
     private void showPreferences() {
         SwitchPreferenceCompat switchPreference = (SwitchPreferenceCompat) findPreference("localremoteKey");

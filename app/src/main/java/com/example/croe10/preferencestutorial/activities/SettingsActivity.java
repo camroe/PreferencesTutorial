@@ -2,34 +2,30 @@ package com.example.croe10.preferencestutorial.activities;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.preference.PreferenceManager;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.example.croe10.preferencestutorial.R;
+public class SettingsActivity extends AppCompatActivity {
 
-public class Preferences extends AppCompatActivity {
-
-    private String TAG = Preferences.class.getCanonicalName();
+    private String TAG = SettingsActivity.class.getCanonicalName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_preferences);
-        Fragment preferenceFragment = new PreferencesFragment();
-        FragmentTransaction ft = getSupportFragmentManager()
-                .beginTransaction();
-
-        ft.add(R.id.helloWorld, preferenceFragment)
+//        setContentView(R.layout.activity_preferences);
+        Log.d(TAG + ".onCreate()", "About to add to helloWorld with Fragment");
+//        Fragment preferenceFragment = new SettingsFragment();
+//        FragmentTransaction ft = getSupportFragmentManager()
+//                .beginTransaction();
+////        ft.add(R.id.helloWorld, preferenceFragment)
+////                .commit();
+//    ft.replace(R.id.helloWorld,preferenceFragment).commit();
+        getSupportFragmentManager().beginTransaction()
+                .replace(android.R.id.content, new SettingsFragment())
                 .commit();
-
-//        getFragmentManager().beginTransaction()
-//                .replace(android.R.id.content, new PreferencesFragment())
-//                .commit();
     }
 
     @Override
@@ -64,10 +60,7 @@ public class Preferences extends AppCompatActivity {
         String server = sharedPreferences.getString("serverKey", null);
 
         System.out.println();
-        if (null != switchPreference)
-            System.out.println(":ISCHECKED: " + switchPreference);
-        else
-            System.out.println("SwitchPreference is NULL");
+        System.out.println(":ISCHECKED: " + switchPreference);
         if (null != server)
             System.out.println("SERVER:" + server);
         else

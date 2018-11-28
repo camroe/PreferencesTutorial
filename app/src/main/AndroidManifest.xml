@@ -15,7 +15,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.croe10.preferencestutorial.activities.Preferences" />
+        <activity android:name="com.example.croe10.preferencestutorial.activities.SettingsActivity" />
     </application>
 
 </manifest>
