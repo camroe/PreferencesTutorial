@@ -8,6 +8,10 @@ import android.view.MenuItem;
 
 import com.example.croe10.preferencestutorial.activities.SettingsActivity;
 
+/**
+ * Based off https://google-developer-training.gitbooks.io/android-developer-fundamentals-course-practicals/content/en/Unit%204/92_p_adding_settings_to_an_app.html
+ *
+ */
 public class HelloActivity extends AppCompatActivity {
 
     @Override
